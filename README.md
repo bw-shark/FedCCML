@@ -22,7 +22,6 @@ The server collects class prototypes from all clients, builds one client prototy
 
 Each client first adapts its classifier head with cross-entropy loss. Then it freezes the classifier and trains the feature extractor with cross-entropy plus two cosine alignment terms, one from the local classifier and one from the proxy classifier.
 
-Round 0 is evaluation only. The training loop then runs exactly `T` communication rounds, as described in the paper. The main experiments use full client participation in every round.
 
 ## 🧠 Algorithms
 
@@ -136,7 +135,6 @@ Results are saved in HDF5 format under `results/`.
 ## 📝 Other Implementation Details
 
 - The repository contains FedCCML only, rather than the full PFLlib baseline collection.
-- Full participation is fixed in the training code to match the paper's main experiments.
 - `scripts/run_cifar100_dir01.sh` and `scripts/run_cifar100_dir01.ps1` provide a ready-to-run CIFAR-100 example.
 
 ## ❓ Bugs or Questions
